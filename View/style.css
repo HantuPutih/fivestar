@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.wrapper{
+    margin: 5rem 0px 5rem 0px;
+}
+.heading1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 52px;
+}
+.heading3{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+.rating-box{
+    border-bottom: 1px solid #B9B9B9;
+    padding: 3rem 0px 3rem 0px;
+}
+.average-rating{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 44px;
+    line-height: 52px;
+}
+
+.star-container{
+    font-size: 40px;
+}
+
+.submit-button{
+    background: #FFFFFF;
+    /* CCCCCC */
+
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    /* shadow-3 */
+
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
