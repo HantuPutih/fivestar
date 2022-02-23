@@ -1,8 +1,6 @@
 
-const submitBtn = document.getElementById('submit-btn');
+const submitBtn = document.getElementById('add-review-btn');
 (function () {
-  console.log('masuk run')
-
   submitBtn.addEventListener('click', () => {
     console.log('open modal')
   })
