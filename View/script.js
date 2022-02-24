@@ -1,7 +1,18 @@
 
-const submitBtn = document.getElementById('add-review-btn');
+const open_modal = document.getElementById('open_modal');
+const modal_container = document.getElementById('modal_container');
+const submit_btn = document.getElementById('submit_btn');
+
 (function () {
-  submitBtn.addEventListener('click', () => {
-    console.log('open modal')
+
+  open_modal.addEventListener('click', (event) => {
+    event.preventDefault()
+    modal_container.classList.add('show')
+  })
+
+  submit_btn.addEventListener('click', (event) => {
+    event.preventDefault()
+    modal_container.classList.remove('show')
+
   })
 })();

@@ -13,17 +13,44 @@
 </head>
 <body>
     <div class="wrapper">
+        <div id="modal_container" class="modal-container">
+            <div class="modal">
+                <h1 class="modal-heading">What's your rating?</h1>
+                <form >
+                    <h5>Rating</h5>
+                    <div>
+                    <a class="star">⭐</a>
+                    <a class="star">⭐</a>
+                    <a class="star">⭐</a>
+                    <a class="star">⭐</a>
+                    <a class="star">⭐</a>
 
+                    </div>
+                    <h5>Review</h5>
+
+                    <input type="text" placeholder="Start typing...">
+                    <br>
+                    <button id="submit_btn">submit review</button>
+                </form>
+            </div>
+        </div>
         <header>
             <h1 class="heading1">The Minimalist Entrepreneur</h1>
         </header>
         <div class="rating-container">
             <h4 class="average-rating">3.8</h4>
-            <div class="open-modal">
-                <div class="star-container">⭐⭐⭐⭐⭐</div>
+            <div id="open_modal" class="open-modal">
+                <div class="star-container">
+                    <a class="star">⭐</a>
+                    <a class="star">⭐</a>
+                    <a class="star" >⭐</a>
+                    <a class="star" >⭐</a>
+                    <a class="star">⭐</a>
+                </div>
                 <button id="add-review-btn" class="submit-button">Add Review</button>
             </div>
         </div>
+
         <div>
             <h3 class="reviews-heading">
                 Reviews
