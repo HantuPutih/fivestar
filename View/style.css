@@ -46,20 +46,44 @@ body{
     line-height: 52px;
 }
 
-.star-container{
-}
 
 .star{
-    text-decoration: none;
-    font-size: 2rem;
-    margin: 0;
-
+    /*text-decoration: none;*/
+    /*font-size: 2rem;*/
+    /*margin: 0;*/
 }
 
 .star-container:hover{
     cursor: pointer;
 
 }
+
+.stars {
+    display: flex;
+}
+.stars a {
+    filter: saturate(0);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0;
+}
+.stars:hover a{
+    filter: saturate(1);
+}
+
+.stars a:hover {
+    filter: saturate(1);
+}
+
+.stars a:hover ~ a{
+    filter: saturate(0);
+}
+
+.stars a.active{
+    filter: saturate(1);
+}
+
 
 .add-review-button{
     width: 120px;
