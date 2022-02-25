@@ -11,6 +11,7 @@ const submit_btn = document.getElementById('submit_btn');
 
     console.log(isClickInside)
     if (!isClickInside) {
+      // modal_container.classList.remove('show')
       //the click was outside the specifiedElement, do something
     }
   });
