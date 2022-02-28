@@ -6,61 +6,65 @@ const submit_btn = document.getElementById('submit_btn');
 const starsA= document.querySelectorAll(".stars a");
 const rated_stars = document.querySelectorAll('.rated-stars a');
 let totalAverageRating = "2";
+
 let arrayOfReview = [
   {
     starsRated: '4',
-    reviewText: 'hello world'
+    reviewText: 'book was full of fluff'
+  },
+  {
+    starsRated: '3',
+    reviewText: 'book was fluff'
   },
   {
     starsRated: '4',
-    reviewText: 'hello world'
-  },
-  {
-    starsRated: '4',
-    reviewText: 'hello world'
+    reviewText: 'book was amazing'
   }
 ];
 
 const reviews_container = document.getElementById('reviews_container');
 
 {
-  // create div with review-list class
-  let parentDiv = d.createElement('div')
-  let textToAdd = d.createTextNode("")
-  parentDiv.appendChild(textToAdd);
-  parentDiv.classList.add('review-list')
-  reviews_container.appendChild(parentDiv)
+  arrayOfReview.forEach((review, idx) => {
+    // create div with review-list class
+    let parentDiv = d.createElement('div')
+    let textToAdd = d.createTextNode("")
+    parentDiv.appendChild(textToAdd);
+    parentDiv.classList.add('review-list')
+    reviews_container.appendChild(parentDiv)
 
-  //create nested element
-  let starDiv = d.createElement('div')
-  // let textToAdd = d.createTextNode("")
-  starDiv.appendChild(textToAdd);
-  starDiv.classList.add('stars', 'disabled', 'rated-stars')
-  parentDiv.appendChild(starDiv)
+    //create nested element
+    let starDiv = d.createElement('div')
+    // let textToAdd = d.createTextNode("")
+    starDiv.appendChild(textToAdd);
+    starDiv.classList.add('stars', 'disabled', 'rated-stars')
+    parentDiv.appendChild(starDiv)
 
-  //create star
+    //create star
 
-  let aTag = d.createElement('a')
-  let aText = d.createTextNode("⭐")
-  aTag.appendChild(aText);
-  aTag.classList.add('star', 'active')
-  starDiv.append(aTag )
+    let aTag = d.createElement('a')
+    let aText = d.createTextNode("⭐")
+    aTag.appendChild(aText);
+    aTag.classList.add('star', 'active')
+    starDiv.prepend(aTag)
 
-  //add bold text
-  let bTag = d.createElement('b')
-  let boldText = d.createTextNode("0")
-  let boldText2 = d.createTextNode(",")
-  bTag.classList.add('rating-bold')
-  bTag.appendChild(boldText);
-  bTag.appendChild(boldText2);
-  parentDiv.appendChild(bTag)
+    //add bold text
+    let bTag = d.createElement('b')
+    let boldText = d.createTextNode(review.starsRated)
+    let boldText2 = d.createTextNode(",")
+    bTag.classList.add('rating-bold')
+    bTag.appendChild(boldText);
+    bTag.appendChild(boldText2);
+    parentDiv.appendChild(bTag)
 
-  //review text
-  let pTag = d.createElement('p')
-  let pText = d.createTextNode("book was full of fluff")
-  pTag.classList.add('rating-text')
-  pTag.appendChild(pText);
-  parentDiv.appendChild(pTag)
+    //review text
+    let pTag = d.createElement('p')
+    let pText = d.createTextNode(review.reviewText)
+    pTag.classList.add('rating-text')
+    pTag.appendChild(pText);
+    parentDiv.appendChild(pTag)
+
+  })
 
 
 
