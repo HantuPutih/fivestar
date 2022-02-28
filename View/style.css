@@ -47,15 +47,18 @@ body{
 }
 
 
-.star{
-    /*text-decoration: none;*/
-    /*font-size: 2rem;*/
-    /*margin: 0;*/
-}
+
 
 .star-container:hover{
     cursor: pointer;
-
+}
+.stars.disabled{
+    pointer-events: none;
+}
+.star{
+    text-decoration: none;
+    font-size: 2rem;;
+    margin: 0;
 }
 
 .stars {
@@ -148,6 +151,7 @@ body{
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    z-index: 9999;
 }
 .modal{
     background-color: white;

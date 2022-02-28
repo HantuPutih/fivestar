@@ -1,18 +1,86 @@
-
+let d = document;
 const open_modal = document.getElementById('open_modal');
 const modal_container = document.getElementById('modal_container');
 const modal_ = document.getElementById('modal_');
 const submit_btn = document.getElementById('submit_btn');
 const starsA= document.querySelectorAll(".stars a");
+const rated_stars = document.querySelectorAll('.rated-stars a');
+let totalAverageRating = "2";
+let arrayOfReview = [
+  {
+    starsRated: '4',
+    reviewText: 'hello world'
+  },
+  {
+    starsRated: '4',
+    reviewText: 'hello world'
+  },
+  {
+    starsRated: '4',
+    reviewText: 'hello world'
+  }
+];
+
+const reviews_container = document.getElementById('reviews_container');
+
+{
+  // create div with review-list class
+  let parentDiv = d.createElement('div')
+  let textToAdd = d.createTextNode("")
+  parentDiv.appendChild(textToAdd);
+  parentDiv.classList.add('review-list')
+  reviews_container.appendChild(parentDiv)
+
+  //create nested element
+  let starDiv = d.createElement('div')
+  // let textToAdd = d.createTextNode("")
+  starDiv.appendChild(textToAdd);
+  starDiv.classList.add('stars', 'disabled', 'rated-stars')
+  parentDiv.appendChild(starDiv)
+
+  //create star
+
+  let aTag = d.createElement('a')
+  let aText = d.createTextNode("⭐")
+  aTag.appendChild(aText);
+  aTag.classList.add('star', 'active')
+  starDiv.append(aTag )
+
+  //add bold text
+  let bTag = d.createElement('b')
+  let boldText = d.createTextNode("0")
+  let boldText2 = d.createTextNode(",")
+  bTag.classList.add('rating-bold')
+  bTag.appendChild(boldText);
+  bTag.appendChild(boldText2);
+  parentDiv.appendChild(bTag)
+
+  //review text
+  let pTag = d.createElement('p')
+  let pText = d.createTextNode("book was full of fluff")
+  pTag.classList.add('rating-text')
+  pTag.appendChild(pText);
+  parentDiv.appendChild(pTag)
 
 
 
-(function () {
+
+
+  rated_stars.forEach((star, idx) => {
+    //add active class to total average stars
+
+    if (idx <= Math.round(+totalAverageRating) - 1) {
+      star.classList.add("active")
+    }
+  })
+
+  document.getElementById('average_rating').innerHTML = totalAverageRating
+
   starsA.forEach((star, clickedIdx) => {
     star.addEventListener('click', () => {
       // otherStar.classList.add("disabled")
       starsA.forEach((starJ, idxJ)=> {
-        console.log(idxJ, clickedIdx)
+        // console.log(idxJ, clickedIdx)
       starJ.classList.remove("active")
         if (idxJ <= clickedIdx) {
           starJ.classList.add("active")
@@ -43,6 +111,6 @@ const starsA= document.querySelectorAll(".stars a");
     event.preventDefault()
     modal_container.classList.remove('show')
   })
-})();
+}
 
 
